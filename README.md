@@ -1,6 +1,8 @@
 # GunSpray [NOT YET RELEASED]
 GunSpray is a plugin for Pan4ur's Gunsaw Multiplayer mod. It aims to bring about various enhancements to the Spray / Graffiti system.
 
+<img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/6554b0ce-f969-41f6-966e-0157130a58a1" />
+
 The plugin primarily adds / changes 5 things to the default Spray / Graffiti system present.
 1) Alphabetical sorting for images.
 2) Subfolder support
