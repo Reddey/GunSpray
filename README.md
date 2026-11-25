@@ -1,5 +1,5 @@
 <img width="960" height="263" alt="logo" src="https://github.com/user-attachments/assets/99adb42b-6b1b-420d-9989-9c78c3a48139" />
-GunSpray is a plugin for [Pan4ur's Gunsaw Multiplayer](https://github.com/Pan4ur/Gunsaw-Multiplayer-Mod) mod. It aims to bring about various enhancements to the Spray / Graffiti system.
+GunSpray is a plugin for <a href="https://github.com/Pan4ur/Gunsaw-Multiplayer-Mod">Pan4ur's Gunsaw Multiplayer Mod</a>. It aims to bring about various enhancements to the Spray / Graffiti system.
 
 https://github.com/user-attachments/assets/57148fca-e84c-4ba1-ae90-a8c00da08505
 
