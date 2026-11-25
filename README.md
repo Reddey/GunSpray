@@ -3,6 +3,9 @@ GunSpray is a plugin for Pan4ur's Gunsaw Multiplayer mod. It aims to bring about
 
 https://github.com/user-attachments/assets/57148fca-e84c-4ba1-ae90-a8c00da08505
 
+# Installing and utilizing.
+The plugin is installed as any other BepInEx plugin. Simply drag the release .dll into the plugins folder. To utilize it, place your desired spray images inside the Graffiti folder created by the Gunsaw Multiplayer Mod. At a bare minimum level, this will be enough. The mod will allow you to utilize up to 512 images as sprays, it will sort them alphabetically, it will allow you to utilize .webp and .gif images (On top of the already supported .jpg, .jpeg and .png formats) and if need be, warn you about images that are too big or too heavy. If you wish to take it one step further, create some new folders inside the root Graffiti folder, and name them whatever you want. You can now move sprays into these subfolders, which will result in them being located inside said subfolders in the Graffiti menu in-game as well. To navigate the folders in-game, just click on them to enter, and click on "BACK" to go back up one folder (Alternatively, right-click to move up one folder).
+
 # The plugin primarily implements 5 changes:
 1) Alphabetical sorting for sprays
 2) Subfolder support
@@ -26,6 +29,6 @@ The mod also additionally raises the spray image cap from 128 to 512. This is po
 .webp and .gif images will now show up in the Spray menu with varying degrees of compatibility; .webp images will support their full feature set, and follow the same rules as .jpg/.jpeg/.png images (1mb max, no bigger than 1280px), transparency remains, and for animated .webp images, only the first frame is fetched and used. As for .gif files, transparency is still retained, and for animated .gif images, the first frame is fetched and used.
 <img width="1285" height="1602" alt=".webp and .gif Support" src="https://github.com/user-attachments/assets/ef21f359-a228-444b-bec2-62a687a76cc0" />
 
-# Other information
+# Other information.
 - For the .webp integration to work, GunSpray will create a temporary folder with a converter in %Temp%. If you wish to uninstall the plugin, make sure to delete the "GunSpray" folder located there as well.
 - GunSpray utilizes the GNU GPLv3 license, and part of it is possible thanks to StbImageSharp, Googles libwebp and Imazen WebP Native Runtime.
