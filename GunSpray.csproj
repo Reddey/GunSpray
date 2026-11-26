@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>GunSpray</AssemblyName>
+    <Version>1.0.0</Version>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GameDirectory Condition="'$(GameDirectory)' == '' and '$(GAME_PATH)' != ''">$(GAME_PATH)</GameDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="StbImageSharp" Version="2.30.16" GeneratePathProperty="true" />
+    <!-- dependencies r embedded into gunspray.dll. DO NOT INSTALL EXTRA DLLs!!!!!-->
+    <EmbeddedResource Include="$(PkgStbImageSharp)/lib/netstandard2.0/StbImageSharp.dll"
+                      LogicalName="GunSpray.Managed.StbImageSharp.dll" />
+    <EmbeddedResource Include="third_party/native/*.dll">
+      <LogicalName>GunSpray.Native.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="ValidateNativeResources" BeforeTargets="CoreCompile">
+    <Error Condition="!Exists('third_party/native/libwebp.dll')"
+           Text="Missing libwebp.dll. Run build.ps1 to fetch the WebP native runtime before building." />
+    <Error Condition="!Exists('third_party/native/libwebpdemux.dll')"
+           Text="Missing libwebpdemux.dll. Run build.ps1 first." />
+  </Target>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(GameDirectory)/BepInEx/core/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameDirectory)/BepInEx/core/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextCoreModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.TextCoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(GameDirectory)/Gunsaw_Data/Managed/UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
