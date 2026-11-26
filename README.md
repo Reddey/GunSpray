@@ -32,3 +32,4 @@ The mod also additionally raises the spray image cap from 128 to 512. This is po
 # Other information.
 - For the .webp integration to work, GunSpray will create a temporary folder with a converter in %Temp%. If you wish to uninstall the plugin, make sure to delete the "GunSpray" folder located there as well.
 - GunSpray utilizes the GNU GPLv3 license, and part of it is possible thanks to StbImageSharp, Googles libwebp and Imazen WebP Native Runtime.
+- To build from source, the command is `.\build.cmd "YOUR/PATH/TO/GUNSAW/HERE/FOOL"`. The built .dll will be located at /root/bin/release/netstandard2.0/GunSpray.dll
